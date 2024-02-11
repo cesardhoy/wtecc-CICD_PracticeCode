@@ -1,8 +1,6 @@
 name: Worflow dispatch
 
 on:
-  push:
-    branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
   workflow_dispatch:
@@ -25,4 +23,4 @@ jobs:
 
     - name: Show input values
       run: |
-        echo "Subscriptions: {{ github.event.inputs.subscriptions }}"
+        echo "Subscriptions: ${{ github.event.inputs.subscriptions }}"
