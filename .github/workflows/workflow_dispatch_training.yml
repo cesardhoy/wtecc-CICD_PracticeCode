@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
     inputs:
       subscriptions:
-        description: "Destroy or apply changes to subscriptions"
+        description: "Subscriptions"
         required: true
         type: string
         default: "value 1"
@@ -21,7 +21,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Chackout latest commit
+    - name: Checkout latest commit
 
     - name: Show input values
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      run: |
+        echo "Subscriptions: {{ github.event.inputs.subscriptions }}"
