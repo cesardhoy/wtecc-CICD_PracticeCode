@@ -24,3 +24,14 @@ jobs:
     - name: Show input values
       run: |
         echo "Subscriptions: ${{ github.event.inputs.subscriptions }}"
+        
+  example_of_matrix:
+      strategy: 
+        matrix: 
+          subscription: ["nestor", "other"]
+      runs-on: ${{ matrix.subscription }}
+      # steps:
+      #   runs-on: |
+      #     echo ${{ matrix.subscription }}
+        
+      
