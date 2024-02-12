@@ -31,7 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy: 
       matrix: 
-        subscription: ${{ fromJson(need.build.output.subscrptions) }}
+        subscription: ${{ fromJson(needs.build.output.subscrptions) }}
     steps:
       - run: |
           echo "${{ matrix.subscription }}"
