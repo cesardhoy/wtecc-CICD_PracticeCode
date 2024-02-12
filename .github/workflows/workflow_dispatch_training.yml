@@ -43,7 +43,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy: 
       matrix: 
-        subscription: ${{ toJson(github.event.inputs.subscriptions) }}
+        subscription: ${{ needs.build.outputs.subs }}
     steps:
       - run: |
           echo "${{ matrix.subscription }}"
