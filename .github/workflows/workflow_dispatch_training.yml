@@ -25,13 +25,13 @@ jobs:
       run: |
         echo "Subscriptions: ${{ toJson(github.event.inputs.subscriptions) }}"
     outputs:
-      subscrptions: ${{ toJson(github.event.inputs.subscriptions) }}
+      subscriptions: ${{ toJson(github.event.inputs.subscriptions) }}
         
   example_of_matrix:
     runs-on: ubuntu-latest
     strategy: 
       matrix: 
-        subscription: ${{ fromJson(needs.build.output.subscrptions) }}
+        subscription: ${{ fromJson(needs.build.outputs.subscriptions) }}
     steps:
       - run: |
           echo "${{ matrix.subscription }}"
