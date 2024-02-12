@@ -37,6 +37,16 @@ jobs:
     steps:
       - run: |
           echo "${{ matrix.subscription }}"
+
+  example_of_matrix2:
+    needs: [build]
+    runs-on: ubuntu-latest
+    strategy: 
+      matrix: 
+        subscription: ${{ toJson(github.event.inputs.subscriptions) }}
+    steps:
+      - run: |
+          echo "${{ matrix.subscription }}"
   
         
       
