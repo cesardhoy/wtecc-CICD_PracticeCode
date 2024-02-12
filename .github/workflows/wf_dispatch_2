@@ -1,0 +1,22 @@
+on:
+  workflow_dispatch:
+    inputs:
+      # Environment to run against (staging or production).
+      environment:
+        description: "Environment to run against"
+        required: true
+        type: choice
+        options: 
+          - "staging"
+          - "production"
+        default: "staging"
+      dry-run:
+        description: "Dry run"
+        required: true
+        type: boolean
+        default: false
+      destroy-subscriptions:
+        description: "Destroy subscriptions"
+        required: true
+        type: string
+        default: ""
