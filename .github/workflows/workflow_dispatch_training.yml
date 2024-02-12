@@ -27,12 +27,12 @@ jobs:
         
   example_of_matrix:
     runs-on: ubuntu-latest
-      strategy: 
-        matrix: 
-          subscription: ["nestor", "other"]
-      steps:
-        - run: |
-            echo "${{ matrix.subscription }}"
+    strategy: 
+      matrix: 
+        subscription: ["nestor", "other"]
+    steps:
+      - run: |
+          echo "${{ matrix.subscription }}"
   
         
       
