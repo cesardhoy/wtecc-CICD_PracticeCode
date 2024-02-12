@@ -29,6 +29,7 @@ jobs:
       subs: "[\"Nestor\",\"Other\"]"
 
   example_of_matrix:
+    needs: [build]
     runs-on: ubuntu-latest
     strategy: 
       matrix: 
