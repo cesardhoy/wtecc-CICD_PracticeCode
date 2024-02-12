@@ -32,7 +32,7 @@ jobs:
       runs-on: ${{ matrix.subscription }}
       steps:
         - run: |
-            echo ${{ subscription }}
+            echo ${{ matrix.subscription }}
   
         
       
