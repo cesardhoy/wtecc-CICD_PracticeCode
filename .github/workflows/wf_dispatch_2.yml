@@ -22,3 +22,16 @@ on:
         required: true
         type: string
         default: ""
+jobs:
+
+  build:
+    name: Subscriptions
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout latest commit
+      uses: actions/checkout@v3
+
+    - name: Show input values
+      run: |
+        echo "Subscriptions: ${{ github.event.inputs.destroy-subscriptions }}"
