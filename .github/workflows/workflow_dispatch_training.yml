@@ -26,13 +26,13 @@ jobs:
         echo "Subscriptions: ${{ github.event.inputs.subscriptions }}"
         
   example_of_matrix:
+    runs-on: ubuntu-latest
       strategy: 
         matrix: 
           subscription: ["nestor", "other"]
-      runs-on: ${{ matrix.subscription }}
       steps:
         - run: |
-            echo ${{ matrix.subscription }}
+            echo "${{ matrix.subscription }}"
   
         
       
