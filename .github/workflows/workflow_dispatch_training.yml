@@ -9,7 +9,7 @@ on:
         description: "Subscriptions"
         required: true
         type: string
-        default: "value 1"
+        default: "[]"
 
 jobs:
 
@@ -23,7 +23,7 @@ jobs:
 
     - name: Show input values
       run: |
-        echo "Subscriptions: ${{ github.event.inputs.subscriptions }}"
+        echo "Subscriptions: ${{ toJson(github.event.inputs.subscriptions) }}"
         
   example_of_matrix:
     runs-on: ubuntu-latest
