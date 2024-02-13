@@ -7,10 +7,10 @@ on:
       environment:
         description: "Environment to run against"
         required: true
-        type: environment
+        type: choose
         options:
           - production
-          - stating
+          - staging
         default: "staging"
       dry-run:
         description: "Dry run"
