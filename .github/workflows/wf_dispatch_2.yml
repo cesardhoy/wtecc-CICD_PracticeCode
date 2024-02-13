@@ -30,7 +30,10 @@ jobs:
 
     - name: Show input values
       run: |
-        if [ "${{ github.event.inputs.destroy-subscriptions }}" != '' ]; then
+        if [ -z "${{ github.event.inputs.destroy-subscriptions }}" ]; then
+          echo "Subscriptions not provided"
+          exit 1
+        else
           echo "Subscriptions: ${{ github.event.inputs.destroy-subscriptions }}"
         fi
     
