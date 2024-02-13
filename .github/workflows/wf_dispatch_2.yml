@@ -32,7 +32,7 @@ jobs:
       run: |
         if [ -z "${{ github.event.inputs.destroy-subscriptions }}" ]; then
           echo "Subscriptions not provided"
-          exit 1
+          exit 0
         else
           echo "Subscriptions: ${{ github.event.inputs.destroy-subscriptions }}"
         fi
