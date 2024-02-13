@@ -7,7 +7,7 @@ on:
       environment:
         description: "Environment to run against"
         required: true
-        type: choose
+        type: choice
         options:
           - production
           - staging
