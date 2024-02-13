@@ -16,9 +16,8 @@ on:
         default: false
       destroy-subscriptions:
         description: "Destroy subscriptions"
-        required: true
+        required: false
         type: string
-        default: ""
 jobs:
 
   build:
