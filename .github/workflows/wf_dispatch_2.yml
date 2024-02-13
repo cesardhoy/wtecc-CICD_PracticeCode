@@ -33,4 +33,4 @@ jobs:
         echo "Subscriptions: ${{ github.event.inputs.destroy-subscriptions }}"
     
     outputs:
-      test: ${{ github.event.inputs.destroy-subscriptions }} || ''
+      test: ${{ github.event.inputs.destroy-subscriptions }} || 'Null'
