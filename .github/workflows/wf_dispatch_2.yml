@@ -45,7 +45,9 @@ jobs:
     needs: [build]
     name: Show input subscription
     runs-on: ubuntu-latest
+    env:
+      dry_run: "true"
     steps:
     - name: Showing subscription entered
       run: |
-        echo "Subscriptions: ${{ needs.build.outputs.subs }}"
+        echo "Subscriptions: ${{ needs.build.outputs.subs }} $dry_run"
