@@ -46,8 +46,9 @@ jobs:
     name: Show input subscription
     runs-on: ubuntu-latest
     env:
-      dry_run: "true"
+      dry_run: true
     steps:
     - name: Showing subscription entered
+      if: ($dry_run == "true")
       run: |
         echo "Subscriptions: ${{ needs.build.outputs.subs }} $dry_run"
