@@ -49,6 +49,6 @@ jobs:
       dry_run: true
     steps:
     - name: Showing subscription entered
-      if: (dry_run)
+      if: (env.dry_run)
       run: |
         echo "Subscriptions: ${{ needs.build.outputs.subs }} $dry_run"
