@@ -33,4 +33,13 @@ jobs:
         echo "Subscriptions: ${{ github.event.inputs.destroy-subscriptions }}"
     
     outputs:
-      test: ${{ github.event.inputs.destroy-subscriptions }} || 'Null'
+      subs: ${{ github.event.inputs.destroy-subscriptions }} || 'Null'
+
+  Show:
+    needs: [build]
+    name: Show input subscription
+    runs-on: ubuntu-latest
+    steps:
+    - name: Showing subscription entered
+      run: |
+        echo "Subscriptions: ${{ needs.build.outputs.subs }}"
