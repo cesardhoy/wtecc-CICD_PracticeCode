@@ -8,6 +8,9 @@ on:
         description: "Environment to run against"
         required: true
         type: environment
+        options:
+          - production
+          - stating
         default: "staging"
       dry-run:
         description: "Dry run"
