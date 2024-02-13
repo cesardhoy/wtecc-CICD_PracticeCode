@@ -31,7 +31,8 @@ jobs:
     - name: Show input values
       run: |
         if [ "${{ github.event.inputs.destroy-subscriptions }}" != '' ]; then
-        echo "Subscriptions: ${{ github.event.inputs.destroy-subscriptions }}"
+          echo "Subscriptions: ${{ github.event.inputs.destroy-subscriptions }}"
+        fi
     
     outputs:
       subs: ${{ github.event.inputs.destroy-subscriptions }} || 'Null'
