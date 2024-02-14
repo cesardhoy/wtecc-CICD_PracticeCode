@@ -49,11 +49,11 @@ jobs:
       dry_run: ${{ github.event.inputs.dry-run }}
     steps:
     - name: Showing subscription entered Dry Run true
-      if: (env.dry_run)
+      if: (env.dry_run == "true")
       run: |
         echo "Subscriptions: ${{ needs.build.outputs.subs }} dry run: $dry_run"
 
     - name: Showing subscription entered Dry Run false
-      if: (!env.dry_run)
+      if: (env.dry_run == "false")
       run: |
         echo "Subscriptions: ${{ needs.build.outputs.subs }} dry run: $dry_run"
