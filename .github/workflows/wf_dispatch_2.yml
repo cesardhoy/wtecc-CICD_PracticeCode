@@ -54,6 +54,6 @@ jobs:
         echo "Subscriptions: ${{ needs.build.outputs.subs }} dry run: $dry_run"
 
     - name: Showing subscription entered Dry Run false
-      if: ${{ env.dry_run == false }}
+      if: (env.dry_run == 'false')
       run: |
         echo "Subscriptions: ${{ needs.build.outputs.subs }} dry run: $dry_run"
